@@ -1,0 +1,7 @@
+# MTK platform .rc configure
+service iqi_redirector /vendor/bin/iqi_redirector
+    class core
+    user system
+    group system
+    disabled
+    oneshot

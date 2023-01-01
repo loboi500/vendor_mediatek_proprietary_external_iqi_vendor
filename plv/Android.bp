@@ -1,0 +1,27 @@
+// iQI BP Redirector
+// This module is designed for iQI BP PLV test with CADeT toolkit.
+// Forward data between CADeT tool and Baseband Platform (BP).
+// CADeT <--Serial Bridge--> iQiBpRedirector <--Modem Bridge--> BP
+
+cc_binary {
+    name: "iqi_redirector",
+    proprietary: true,
+    owner: "mtk",
+
+    local_include_dirs: [
+        "include"
+    ],
+
+    srcs: [
+        "src/*.cpp",
+    ],
+
+    shared_libs: [
+        "liblog",
+        "libc++",
+        "libcutils",
+        "libutils",
+    ],
+
+    init_rc: ["iqi_redirector.rc"],
+}
